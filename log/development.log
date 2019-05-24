@@ -1,0 +1,710 @@
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (191.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (137.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to CreateUsers (20190521010442)
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190521010442_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190521010442"]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (135.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to CreateCadastros (20190521010937)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "cadastros" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "brand" varchar, "model" varchar, "board" varchar, "color" varchar, "rental_value" float, "note" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190521010937_create_cadastros.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190521010937"]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (133.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-05-21 01:10:01.919072"], ["updated_at", "2019-05-21 01:10:01.919072"]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (103.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Started GET "/product" for 127.0.0.1 at 2019-05-20 22:10:14 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/product"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-05-20 22:10:19 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /var/lib/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /var/lib/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (8.6ms)
+Completed 200 OK in 109ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/Cadastro" for 127.0.0.1 at 2019-05-20 22:10:24 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/Cadastro"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/Cadastros" for 127.0.0.1 at 2019-05-20 22:10:28 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/Cadastros"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/cadastros" for 127.0.0.1 at 2019-05-20 22:10:52 -0300
+Processing by CadastrosController#index as HTML
+  Rendering cadastros/index.html.erb within layouts/application
+  [1m[36mCadastro Load (0.2ms)[0m  [1m[34mSELECT "cadastros".* FROM "cadastros"[0m
+  ↳ app/views/cadastros/index.html.erb:19
+  Rendered cadastros/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 1806ms (Views: 1803.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cadastros/new" for 127.0.0.1 at 2019-05-20 22:10:58 -0300
+Processing by CadastrosController#new as HTML
+  Rendering cadastros/new.html.erb within layouts/application
+  Rendered cadastros/_form.html.erb (169.0ms)
+  Rendered cadastros/new.html.erb within layouts/application (170.9ms)
+Completed 200 OK in 232ms (Views: 203.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-20 22:25:25 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /var/lib/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /var/lib/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (1.6ms)
+Completed 200 OK in 7ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cadastros" for 127.0.0.1 at 2019-05-20 22:25:37 -0300
+Processing by CadastrosController#index as HTML
+  Rendering cadastros/index.html.erb within layouts/application
+  [1m[36mCadastro Load (0.1ms)[0m  [1m[34mSELECT "cadastros".* FROM "cadastros"[0m
+  ↳ app/views/cadastros/index.html.erb:19
+  Rendered cadastros/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 7033ms (Views: 7027.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cadastros" for 127.0.0.1 at 2019-05-20 22:26:04 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"cadastros"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "cadastros"[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCadastro Load (0.1ms)[0m  [1m[34mSELECT  "cadastros".* FROM "cadastros" ORDER BY "cadastros"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (9.5ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (2.4ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (12.0ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (1.9ms)
+  Rendering /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (2.8ms)
+Completed 404 Not Found in 797ms (Views: 471.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-20 22:26:10 -0300
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "cadastros"[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCadastro Load (0.0ms)[0m  [1m[34mSELECT  "cadastros".* FROM "cadastros" ORDER BY "cadastros"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (8.5ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (2.2ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (6.8ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (1.8ms)
+  Rendering /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (2.8ms)
+Completed 200 OK in 95ms (Views: 92.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cadastro?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-05-20 22:28:10 -0300
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"cadastro"}
+  Rendering /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mCadastro Load (0.1ms)[0m  [1m[34mSELECT  "cadastros".* FROM "cadastros" ORDER BY cadastros.id desc LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (25.6ms)
+Completed 200 OK in 54ms (Views: 36.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/cadastro/new?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-05-20 22:28:14 -0300
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"cadastro"}
+  Rendering /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (8.3ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.7ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.6ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.7ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (1.0ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.8ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_submit_buttons.html.haml (34.0ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax (131.7ms)
+Completed 200 OK in 226ms (Views: 206.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-05-20 22:28:19 -0300
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"user"}
+  Rendering /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY users.id desc LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (52.3ms)
+Completed 200 OK in 102ms (Views: 71.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cadastro?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-05-20 22:28:20 -0300
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"cadastro"}
+  Rendering /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mCadastro Load (0.3ms)[0m  [1m[34mSELECT  "cadastros".* FROM "cadastros" ORDER BY cadastros.id desc LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (62.9ms)
+Completed 200 OK in 99ms (Views: 77.2ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (257.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (372.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to CreateUsers (20190521010442)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190521010442_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190521010442"]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (233.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to CreateCadastros (20190521010937)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "cadastros" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "brand" varchar, "model" varchar, "board" varchar, "color" varchar, "rental_value" float, "note" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190521010937_create_cadastros.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190521010937"]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (177.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to AddDeviseToUsers (20190521013402)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "email" varchar DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20190521013402_add_devise_to_users.rb:7
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Started GET "/cadastro" for 127.0.0.1 at 2019-05-20 22:42:09 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/cadastro" for 127.0.0.1 at 2019-05-20 22:42:15 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-05-20 22:42:19 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to AddDeviseToUsers (20190521013402)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "email" varchar DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20190521013402_add_devise_to_users.rb:7
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to AddDeviseToUsers (20190521013402)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" varchar DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20190521013402_add_devise_to_users.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" varchar[0m
+  ↳ db/migrate/20190521013402_add_devise_to_users.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" datetime[0m
+  ↳ db/migrate/20190521013402_add_devise_to_users.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" datetime[0m
+  ↳ db/migrate/20190521013402_add_devise_to_users.rb:15
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190521013402_add_devise_to_users.rb:41
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20190521013402_add_devise_to_users.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190521013402"]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (269.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-05-21 01:44:56.486727"], ["updated_at", "2019-05-21 01:44:56.486727"]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (150.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Started GET "/" for 127.0.0.1 at 2019-05-20 22:45:13 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RailsAdmin::MainController#dashboard as HTML
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-20 22:45:13 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 199ms (Views: 189.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-05-20 22:45:40 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ThcwE2GJZNOjXFynKFtu4Mr7iHKK9kc4oSiMrSkGzggGtoEyhja9OV9pcefJUU8xEBNZWePwIp0bEVlhxjeh8g==", "user"=>{"email"=>"keylane@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "keylane@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.5ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ThcwE2GJZNOjXFynKFtu4Mr7iHKK9kc4oSiMrSkGzggGtoEyhja9OV9pcefJUU8xEBNZWePwIp0bEVlhxjeh8g==", "user"=>{"email"=>"keylane@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 144ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-05-20 22:45:45 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"toUNujA0Od5zCcZr9OC+APEl10b+QFzOR48cZDRopQP+JLyb14vgNI886ysV6p/RK80GbZdGOWv9tsmo21nK+Q==", "user"=>{"email"=>"keylane@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "keylane@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.1ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"toUNujA0Od5zCcZr9OC+APEl10b+QFzOR48cZDRopQP+JLyb14vgNI886ysV6p/RK80GbZdGOWv9tsmo21nK+Q==", "user"=>{"email"=>"keylane@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (0.6ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 127ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "keylane@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Keylane"], ["email", "keylane@gmail.com"], ["created_at", "2019-05-21 01:47:10.859775"], ["updated_at", "2019-05-21 01:47:10.859775"], ["encrypted_password", "$2a$11$/41oETNnC5bCjOacn4oQeuhLQBND2K9g7Q7S0UEPx5paQw/6inc1u"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (226.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-20 22:47:20 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 228ms (Views: 211.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-05-20 22:47:25 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5BGkR8GqmQNCIqG4wNQyG4vzhgB1Q4z2TkZ9AZdYW26ssBVmJhVA6b4XjPgh3hPKURtXKxxF6VP0f6jNeGk0lA==", "user"=>{"email"=>"keylane@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "keylane@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 119ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-20 22:47:26 -0300
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ config/initializers/rails_admin.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "cadastros"[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCadastro Load (0.1ms)[0m  [1m[34mSELECT  "cadastros".* FROM "cadastros" ORDER BY "cadastros"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (9.3ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (3.1ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (6.8ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (1.9ms)
+  Rendering /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (2.9ms)
+Completed 200 OK in 350ms (Views: 118.3ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2019-05-20 22:47:29 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"80CGNZOiWW/5dCWvoQ1qsIGPTpm6/0WuzJVpLzTrstTksf8AOJJg9/w/jrOLA5q54TNL/h2kOaWrfC6XA0USKQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-20 22:47:29 -0300
+Processing by RailsAdmin::MainController#dashboard as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-20 22:47:29 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (0.6ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 24ms (Views: 23.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-20 22:47:51 -0300
+Processing by RailsAdmin::MainController#dashboard as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-20 22:47:51 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 32ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-05-20 23:14:58 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jcQnc2qMAXW26r3IhgsLKE2bWUioZZsmzYdv2IdCdoUTuYZHYRgTqi3oTRty9tad+4hYQB/2rkajUBuFQoJ0WQ==", "user"=>{"email"=>"keylane@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "keylane@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 116ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-20 23:14:58 -0300
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ config/initializers/rails_admin.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "cadastros"[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCadastro Load (0.1ms)[0m  [1m[34mSELECT  "cadastros".* FROM "cadastros" ORDER BY "cadastros"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (11.1ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_secondary_navigation.html.haml (2.7ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_navigation.html.haml (6.2ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (2.1ms)
+  Rendering /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/layouts/rails_admin/pjax.html.haml (3.0ms)
+Completed 200 OK in 116ms (Views: 111.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cadastro?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-05-20 23:15:01 -0300
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"cadastro"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ config/initializers/rails_admin.rb:7
+  Rendering /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mCadastro Load (0.2ms)[0m  [1m[34mSELECT  "cadastros".* FROM "cadastros" ORDER BY cadastros.id desc LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (33.9ms)
+Completed 200 OK in 63ms (Views: 46.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-05-20 23:15:01 -0300
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"user"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ config/initializers/rails_admin.rb:7
+  Rendering /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY users.id desc LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (47.1ms)
+Completed 200 OK in 63ms (Views: 54.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cadastro?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-05-20 23:15:05 -0300
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"cadastro"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ config/initializers/rails_admin.rb:7
+  Rendering /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mCadastro Load (0.2ms)[0m  [1m[34mSELECT  "cadastros".* FROM "cadastros" ORDER BY cadastros.id desc LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (34.2ms)
+Completed 200 OK in 49ms (Views: 40.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cadastro/new?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2019-05-20 23:15:06 -0300
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"cadastro"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ config/initializers/rails_admin.rb:7
+  Rendering /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (1.6ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.1ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.3ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.1ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.1ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_form_field.html.haml (0.5ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/_submit_buttons.html.haml (6.7ms)
+  Rendered /var/lib/gems/2.5.0/gems/rails_admin-1.4.2/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax (22.2ms)
+Completed 200 OK in 38ms (Views: 30.2ms | ActiveRecord: 0.1ms)
+
+

@@ -1,0 +1,47 @@
+<%= form_with(model: cadastro, local: true) do |form| %>
+  <% if cadastro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cadastro.errors.count, "error") %> prohibited this cadastro from being saved:</h2>
+
+      <ul>
+      <% cadastro.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :brand %>
+    <%= form.text_field :brand %>
+  </div>
+
+  <div class="field">
+    <%= form.label :model %>
+    <%= form.text_field :model %>
+  </div>
+
+  <div class="field">
+    <%= form.label :board %>
+    <%= form.text_field :board %>
+  </div>
+
+  <div class="field">
+    <%= form.label :color %>
+    <%= form.text_field :color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rental_value %>
+    <%= form.text_field :rental_value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :note %>
+    <%= form.text_field :note %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

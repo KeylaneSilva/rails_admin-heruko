@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @cadastro.brand %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @cadastro.model %>
+</p>
+
+<p>
+  <strong>Board:</strong>
+  <%= @cadastro.board %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @cadastro.color %>
+</p>
+
+<p>
+  <strong>Rental value:</strong>
+  <%= @cadastro.rental_value %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @cadastro.note %>
+</p>
+
+<%= link_to 'Edit', edit_cadastro_path(@cadastro) %> |
+<%= link_to 'Back', cadastros_path %>

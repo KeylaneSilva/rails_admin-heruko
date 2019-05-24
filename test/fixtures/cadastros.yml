@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brand: MyString
+  model: MyString
+  board: MyString
+  color: MyString
+  rental_value: 1.5
+  note: MyString
+
+two:
+  brand: MyString
+  model: MyString
+  board: MyString
+  color: MyString
+  rental_value: 1.5
+  note: MyString
